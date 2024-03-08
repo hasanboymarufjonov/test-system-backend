@@ -12,14 +12,20 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:5173"],
+    origin: [
+      "http://localhost:5173",
+      "https://test-system-frontend.vercel.app",
+    ],
   })
 );
 
 app.set("trust proxy", 1);
 
 app.use((req, res, next) => {
-  const allowedOrigins = ["http://localhost:5173"];
+  const allowedOrigins = [
+    "http://localhost:5173",
+    "https://test-system-frontend.vercel.app",
+  ];
 
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
