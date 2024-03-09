@@ -145,7 +145,7 @@ const solveTest = asyncHandler(async (req, res) => {
     const subjectIndex = user.scores.findIndex(
       (score) => score.subjectId.toString() === test.subject.toString()
     );
-    if (subjectIndex !== 4) {
+    if (subjectIndex !== -1) {
       user.scores[subjectIndex].score += score;
     } else {
       user.scores.push({
