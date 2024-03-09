@@ -27,7 +27,6 @@ const createSubject = asyncHandler(async (req, res) => {
   const { name, imageURL } = req.body;
 
   try {
-    // Create the subject document
     const subject = await Subject.create({ name, imageURL });
 
     res.status(201).json(subject);
